@@ -1,0 +1,18 @@
+﻿@using InterviewProjectMvc1.Controllers
+@model ClassUser
+@{
+    ViewData["Title"] = "AddUser";
+}
+
+<form method="post">
+    <label>Enter Role ID</label>
+    <input type="text" asp-for="@Model.RoleId" class="form-control"/>
+    <label>Enter Full Name</label>
+    <input type="text" asp-for="@Model.UserName" class="form-control"/>
+    <label>Register Password</label>
+    <input type="password" asp-for="@Model.Password" class="form-control"/>
+    <br />
+    <button type="submit" class="btn btn-info">Add New User</button>
+    <a href="/ManageUser/Index" class="btn btn-info">Cancel</a>
+</form>
+

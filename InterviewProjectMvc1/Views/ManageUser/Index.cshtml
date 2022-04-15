@@ -1,0 +1,31 @@
+﻿@using InterviewProjectMvc1.Controllers
+@model List<ClassUser>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>
+            Role ID
+        </th>
+        <th>
+            Full Name
+        </th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.UserId</td>
+            <td>@item.RoleId</td>
+            <td>@item.UserName</td>
+            <td><a href="/ManageUser/EditUser/@item.UserId" class="btn btn-success">Edit</a></td>
+            <td><a href="/ManageUser/DeleteUser/@item.UserId" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>
+<a href="/ManageUser/AddUser/" class="btn btn-primary">New User</a>
+

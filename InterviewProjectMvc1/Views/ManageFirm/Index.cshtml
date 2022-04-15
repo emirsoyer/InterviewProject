@@ -1,0 +1,22 @@
+﻿@using InterviewProjectMvc1.Controllers
+@model List<ClassFirm>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Firm Name</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FirmId</td>
+            <td>@item.FirmName</td>
+            <td><a href="/ManageFirm/EditFirm/@item.FirmId" class="btn btn-success">Edit</a></td>
+            <td><a href="#" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>
+<a href="/ManageFirm/AddFirm/" class="btn btn-primary">New Firm</a>

@@ -1,0 +1,17 @@
+﻿@model InterviewProjectMvc1.Controllers.ClassFirm
+@{
+    ViewData["Title"] = "EditFirm";
+}
+
+<h1>Edit Firm</h1>
+<form method="post">
+    <label>ID</label>
+    @Html.TextBoxFor(x=>x.FirmId, new {@class="form-control"})
+    <br />
+    <label>Firm Name</label>
+    @Html.TextBoxFor(x=>x.FirmName, new {@class="form-control"})
+    <br />
+
+    <button class="btn btn-outline-success">Update Firm</button>
+</form>
+
