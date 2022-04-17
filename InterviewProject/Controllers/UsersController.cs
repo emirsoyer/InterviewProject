@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using InterviewProject.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace InterviewProject.Controllers
 {
@@ -23,6 +24,7 @@ namespace InterviewProject.Controllers
 
         // GET: api/Users
         [HttpGet]
+        
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();

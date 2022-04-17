@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -9,6 +10,7 @@ namespace InterviewProjectMvc1.Controllers
 {
     public class ManageFirm : Controller
     {
+        
         public async Task<IActionResult> Index()
         {
             var httpClient = new HttpClient();
@@ -36,6 +38,7 @@ namespace InterviewProjectMvc1.Controllers
             return View(firm);
         }
         [HttpGet]
+        
         public async Task<IActionResult> EditFirm(int id)
         {
             var httpClient = new HttpClient();

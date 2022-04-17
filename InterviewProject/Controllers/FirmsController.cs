@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using InterviewProject.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace InterviewProject.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class FirmsController : ControllerBase
     {
         private readonly DatabaseContext _context;

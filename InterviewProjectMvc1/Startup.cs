@@ -7,7 +7,10 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace InterviewProjectMvc1
 {
@@ -25,6 +28,8 @@ namespace InterviewProjectMvc1
         {
             services.AddControllersWithViews();
             services.AddSession(options => { options.IdleTimeout = TimeSpan.FromMinutes(60); });
+            services.AddAuthentication();
+            services.AddAuthorization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +51,7 @@ namespace InterviewProjectMvc1
             app.UseRouting();
             app.UseSession();
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
